@@ -12557,6 +12557,11 @@ var demo = function() {
       updateResult();
       event.preventDefault();
     }));
+    $(".source-copy").on("click", (function(event) {
+      $(".source").select();
+      document.execCommand("copy");
+      alert("Copied to clipboard");
+    }));
     $(document).on("click", "[data-result-as]", (function(event) {
       var view = $(this).data("resultAs");
       if (view) {
